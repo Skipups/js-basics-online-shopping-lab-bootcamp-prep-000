@@ -57,12 +57,13 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
+  let totalBeforeEmpty= total();
   if (cardNumber===undefined){
     return "Sorry, we don't have a credit card on file for you."
   } else{
     for (let i=0; i<cart.length; i++){
       cart.splice(i);
-    return `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`
+    return `Your total cost is $${totalBeforeEmpty}, which will be charged to the card ${cardNumber}.`
   }
 }
 }
